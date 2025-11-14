@@ -1,0 +1,19 @@
+/**
+* Aqui estara todo lo referente a diseño general del app
+*/
+
+.color-institucional {
+    background-color: #FFC107;
+}
+.color-institucional-secundario {
+    background-color: #664D03;
+}
+
+
+.inactive{
+    background-color: darkgrey;
+}
+.nav-pills .nav-link.active,.nav-pills .show>.nav-link {
+    background-color: #664D03;
+}
+

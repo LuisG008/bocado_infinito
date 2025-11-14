@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recibo - El Bocado Infinito</title>
+<link rel="stylesheet" href="../../lib/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/index.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      
+    }
+
+    .receipt-container {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .receipt-header {
+      text-align: center;
+      border-bottom: 1px dashed #aaa;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .brand-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .brand-logo h4 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .receipt-info {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .receipt-table th, .receipt-table td {
+      font-size: 14px;
+      padding: 6px;
+    }
+
+    .receipt-total {
+      font-weight: bold;
+      font-size: 16px;
+      text-align: right;
+      margin-top: 10px;
+      border-top: 1px dashed #aaa;
+      padding-top: 10px;
+    }
+
+    .receipt-note {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .receipt-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .receipt-buttons .btn {
+      flex: 1;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+            <div class="cont-log">
+                <img src="../../assets/img/logo.png" class="logo" alt="">
+            </div>
+        </header>
+
+  <div class="receipt-container">
+    <div class="receipt-header">
+      <div class="brand-logo">
+        <img src="../../assets/img/logo.png" alt="Logo">
+        <h4>El Bocado Infinito</h4>
+      </div>
+      <small>Pedido No. 005</small>
+    </div>
+
+    <div class="receipt-info">
+      <p>Pedido: No. 005</p>
+      <p>Fecha: 20-10-2025</p>
+      <p>Telefono: 10856667</p>
+      <p>Dirección: Plaza X Local 01</p>
+    </div>
+
+    <table class="table table-bordered receipt-table">
+      <thead class="table-light">
+        <tr>
+          <th>Cant.</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Papas a la francesa</td>
+          <td>$8.000</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Carne asada</td>
+          <td>$20.000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bandeja paisa</td>
+          <td>$60.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="receipt-total">
+      Total: $88.000
+    </div>
+
+    <div class="receipt-note">
+      Por favor dirigirse a caja para realizar el pago.<br>
+      ¡Gracias por su visita!
+    </div>
+
+    <div class="receipt-buttons">
+      <a  href="estado_pedido.html"><button type="button" class="btn btn-warning">Ver Estado</button></a>
+      <a  href="#"><button type="button" class="btn btn-warning">Descargar</button></a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

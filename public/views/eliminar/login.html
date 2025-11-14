@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Bocado Infinito - Login</title>
+  <link rel="stylesheet" href="../../lib/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+  <style>
+    :root {
+      --radius:12px;
+      --maxw:520px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: #ffffff;
+      font-family: inherit;
+    }
+
+    .card {
+      width: 100%;
+      max-width: var(--maxw);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .card-content {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 28px;
+      color: #0b1220;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 28px;
+      text-align: center;
+      font-weight: 700;
+      color: #003049;
+    }
+
+    p.lead {
+      margin: 0 0 18px 0;
+      color: #333;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    form { display: grid; gap: 12px; }
+
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .field { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+    label { font-size: 13px; color: #0b1220; }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: #fff;
+      font-size: 15px;
+      outline: none;
+      width: 100%;
+      transition: box-shadow .14s, border-color .14s;
+    }
+
+    input:focus, select:focus {
+      box-shadow: 0 6px 20px rgba(15,98,254,0.08);
+      border-color: #0f62fe;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    /* button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+    }
+
+    button.primary {
+      background: #ff6600;
+      color: white;
+    }
+    button.primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      background: #ff9900;
+    }
+
+    button.ghost {
+      background: transparent;
+      border: 1px solid rgba(12,20,40,0.1);
+      color: #0b1220;
+    } */
+
+    #mensajeError {
+      color: #ff0000;
+      margin-top: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .row { flex-direction: column; }
+      .card-content { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="card-content">
+      <div class="logo">
+        <img src="../../assets/img/logo.png" alt="Logo Restaurante">
+      </div>
+      <h1>Bienvenido Restaurante El Bocado Infinito</h1>
+      <p class="lead">Ingreso Personal habilitado</p>
+
+              <div class="row">
+          <div class="field">
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" placeholder="Documento" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="clave">Clave:</label>
+            <input type="password" id="clave" placeholder="Ingrese su clave" required>
+          </div>
+        </div>
+
+        
+        <div class="actions d-flex justify-content-center">
+          <a  href="admin.html"><button type="button" class="btn btn-warning">Ingresar</button></a>
+        </div>
+
+        <div id="mensajeError"></div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const btnIngresar = document.getElementById('btnIngresar');
+    const nombre = document.getElementById('nombre');
+    const identificacion = document.getElementById('identificacion');
+    const clave = document.getElementById('clave');
+    const cargo = document.getElementById('cargo');
+    const mensajeError = document.getElementById('mensajeError');
+
+    function validarCampos() {
+      const todosLlenos = 
+        nombre.value.trim() !== "" &&
+        identificacion.value.trim() !== "" &&
+        clave.value.trim() !== "" &&
+        cargo.value.trim() !== "";
+
+      btnIngresar.disabled = !todosLlenos;
+    }
+
+    // Permitir solo números en identificación y clave
+    identificacion.addEventListener('input', () => {
+      identificacion.value = identificacion.value.replace(/\D/g,'');
+      validarCampos();
+    });
+
+    clave.addEventListener('input', () => {
+      clave.value = clave.value.replace(/\D/g,'');
+      validarCampos();
+    });
+
+    [nombre, cargo].forEach(input => {
+      input.addEventListener('input', validarCampos);
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // Validar longitud mínima 7
+      if(identificacion.value.length < 7 || clave.value.length < 7){
+        mensajeError.textContent = "¡La identificación y la clave deben tener al menos 7 dígitos!";
+        return;
+      }
+
+      mensajeError.textContent = "";
+      alert("Ingreso exitoso ✅");
+      window.location.href = 'lista.html';
+    });
+  </script>
+</body>
+</html>
