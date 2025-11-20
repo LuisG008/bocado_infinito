@@ -1,12 +1,188 @@
 <!DOCTYPE html>
+
 <head>
     <!-- Libreria boostrap -->
     <link rel="stylesheet" href="../lib/bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../lib/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/ui.css">
+    <link rel="stylesheet" href="../css/pedidos.css">
 </head>
 <div>
-    <h6>esta pantalla la debe desarrollar Gustavo</h6>
-    
-</div>
-</html>
+    <div class="div-principal-pedidos">
+        <!-- navbar -->
+        <nav class="navbar navbar-light color-institucional">
+            <div class="container-fluid">
+                <a class=""></a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscador" aria-label="Search">
+
+                </form>
+            </div>
+        </nav>
+        <!-- Fin navbar -->
+
+        <!-- Boton flotante crear -->
+        <button class="btn btn-warning position-fixed bottom-0 end-0 m-4" data-bs-toggle="modal"
+            data-bs-target="#crearUsuario">
+            <i class="bi bi-plus-lg me-2"></i>Crear
+        </button>
+        <!-- FInBoton flotante crear -->
+
+        <div class="div-secundario-pedidos">
+            <div class="tabla">
+                <table class="table table-hover" style="background-color: #FFF3CD;">
+                    <thead>
+                        <tr>
+                            <th scope="col"># usuario</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">telefono</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Clave</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1010141548</th>
+                            <td>Carlos Andres Torres</td>
+                            <td>3136485659</td>
+                            <td>Administrador</td>
+                            <td>*****</td>
+                            <td><span class="badge bg-success">Activo</span></td>
+                            <td><i class="bi bi-pencil-square me-2" data-bs-toggle="modal"
+                                    data-bs-target="#editarUsuario"></i>
+                                <i class="bi bi-dash-circle-fill text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>31431948</th>
+                            <td>Jacob Perez</td>
+                            <td>3009845612</td>
+                            <td>Caja</td>
+                            <td>*****</td>
+                            <td><span class="badge bg-success">Activo</span></td>
+                            <td><i class="bi bi-pencil-square me-2" data-bs-toggle="modal"
+                                    data-bs-target="#editarUsuario"></i>
+                                <i class="bi bi-dash-circle-fill text-danger"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>1087965456</th>
+                            <td>Andres Gomez</td>
+                            <td>3119654852</td>
+                            <td>Cocina</td>
+                            <td>*****</td>
+                            <td><span class="badge bg-danger">Inactivo</span></td>
+                            <td><i class="bi bi-pencil-square me-2" data-bs-toggle="modal"
+                                    data-bs-target="#editarUsuario"></i>
+                                <i class="bi bi-dash-circle-fill text-danger"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Crear-->
+    <div class="modal fade" id="crearUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Identificacion</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Telefono</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Por favor seleccione..</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Cocina</option>
+                            <option value="3">Caja</option>
+                            <option value="4">Entrega</option>
+                        </select>
+                        <label for="floatingSelect">Rol</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Clave</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
+    <!-- Modal Editar-->
+    <div class="modal fade" id="editarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Identificacion</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Telefono</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Por favor seleccione..</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Cocina</option>
+                            <option value="3">Caja</option>
+                            <option value="4">Entrega</option>
+                        </select>
+                        <label for="floatingSelect">Rol</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Clave</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
+    <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+
+    </html>

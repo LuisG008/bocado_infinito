@@ -29,9 +29,9 @@ body{
   width: 20vw !important; /* O el tamaño que usabas antes */
 }
 
-.hamburguesa{
+/* .hamburguesa{
     z-index: 999;
-}
+} */
 /*
 @media (max-width: 1000px) {
     body{
@@ -63,5 +63,17 @@ body{
   }
   .active{
     width: 85%;
+  }
+}
+
+@media (min-width: 1170px) {
+  body{
+      grid-template-columns:17vw 83vw;
+  }
+}
+
+@media (min-width: 1570px) {
+  body{
+      grid-template-columns:12vw 88vw;
   }
 }

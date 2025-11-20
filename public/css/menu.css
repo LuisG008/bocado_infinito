@@ -1,0 +1,12 @@
+.div-principal-pedidos{
+    height: 100vh;
+    width: 100vw;
+}
+
+.div-secundario-menu{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

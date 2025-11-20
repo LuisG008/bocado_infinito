@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/logon-min-infinito-negro.png" sizes="16x16"/>
     <link rel="stylesheet" href="../lib/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
 
@@ -91,8 +93,14 @@
 
 
             </div>
-            <a  href="eliminar/estado_pedido.html"><button type="button" class="btn btn-warning btn-flotante-volver">Pedidos</button></a>
-            <a  href="terminar_pedido.html"><button type="button" class="btn btn-warning btn-flotante">🛒 Generar Pedido</button></a>
+            <!-- Botones flotantes -->
+            <a  href="estado_pedido.html"><button class="btn btn-warning position-fixed bottom-0 start-0 mb-4 ms-4">
+                <i class="bi bi-clock-history"></i> Pedidos
+            </button></a>
+            <a  href="terminar_pedido.html"><button class="btn btn-warning position-fixed bottom-0 end-0 m-4" data-bs-toggle="modal" data-bs-target="#crearMenu">
+                <i class="bi bi-cart-check-fill"></i> Generar Pedido
+            </button></a>
+
         </main>
     </div>
 
